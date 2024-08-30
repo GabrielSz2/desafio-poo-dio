@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Bootcamp {
+	
     private String nome;
     private String descricao;
     private final LocalDate dataInicial = LocalDate.now();
@@ -14,7 +15,18 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
-
+    public Bootcamp() {
+    }
+    
+    public Bootcamp(String nome, String descricao) {
+    	this.nome = nome;
+    	this.descricao = descricao;
+    }
+    
+    public void addConteudo(Conteudo conteudo) {
+    	conteudos.add(conteudo);
+    }
+    
     public String getNome() {
         return nome;
     }
